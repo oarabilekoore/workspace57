@@ -15,9 +15,7 @@ A modern, minimalist Hyprland rice for EndeavourOS featuring custom Bash functio
 
 ## Video Demo
 
-<div align="center">
-  <a href="https://youtu.be/VamD6YGK_m0">
-</div>
+[![Watch the video](https://img.youtube.com/vi/VamD6YGK_m0/default.jpg)](https://youtu.be/VamD6YGK_m0)
 
 ## 🖥️ System Info
 

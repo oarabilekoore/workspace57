@@ -1,0 +1,23 @@
+/* Firefox Chrome Theme */
+:root {
+  --toolbar-bgcolor: {{ .Theme.Surface | toHex }} !important;
+  --toolbar-color: {{ .Theme.OnSurface | toHex }} !important;
+  --tab-selected-bgcolor: {{ (tone .Theme.Primary 80) | toHex }} !important;
+  --tab-selected-color: {{ (tone .Theme.Primary 20) | toHex }} !important;
+  --urlbar-background-color: {{ .Theme.SurfaceVariant | toHex }} !important;
+  --urlbar-color: {{ .Theme.OnSurface | toHex }} !important;
+}
+
+#navigator-toolbox {
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background-color: var(--tab-selected-bgcolor) !important;
+  color: var(--tab-selected-color) !important;
+}
+
+#urlbar {
+  background-color: var(--urlbar-background-color) !important;
+  color: var(--urlbar-color) !important;
+}

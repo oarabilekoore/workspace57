@@ -1,0 +1,135 @@
+configuration {
+  modes: "drun";
+  font: "Monaspace Neon Frozen 12";
+  drun-display-format: "{name}";
+}
+
+* {
+  /* Material-cohesive palette */
+  background: {{ .Theme.Surface | toHex }};
+  background-alt: {{ .Theme.SurfaceVariant | toHex }};
+  foreground: {{ .Theme.OnSurface | toHex }};
+  foreground-alt: {{ .Theme.OnSurfaceVariant | toHex }};
+
+  accent: {{ (tone .Theme.Primary 80) | toHex }};
+  accent-weak: {{ (tone .Theme.Primary 60) | toHex }};
+
+  selected-bg: {{ (tone .Theme.Secondary 40) | toHex }};
+  selected-fg: {{ (tone .Theme.Secondary 95) | toHex }};
+
+  border-color-main: {{ (tone .Theme.Neutral 40) | toHex }};
+
+  /* Role aliases used below */
+  fg: @foreground;
+  fg-muted: @foreground-alt;
+  fg-accent: @accent;
+
+  bg-base: @background;
+  bg-elev: @background-alt;
+
+  bg-selected: @selected-bg;
+  fg-selected: @selected-fg;
+  border-selected: @accent;
+
+  border: @border-color-main;
+
+  spacing: 0;
+}
+
+window {
+  background-color: transparent;
+  border: 2px;
+  border-color: @border;
+  transparency: "real";
+  children: [mainbox];
+  border-radius: @br;          /* reverted to variable */
+  padding: 0;
+  width: 20%;
+}
+
+mainbox {
+  children: [listview];
+  orientation: vertical;
+}
+
+entry {
+  color: @fg-accent;
+  placeholder-color: @fg-muted;
+  background-color: @bg-elev;
+  text-transform: bold;
+  border-radius: @br;          /* reverted to variable */
+  padding: 12px;
+  margin: 10px;
+  border: 0;
+  vertical-align: 0.5;
+}
+
+listview {
+  background-color: @bg-base;
+  scrollbar: false;
+  border: 0;
+  lines: 3;                    /* reverted to original */
+  padding: 10px;
+  spacing: 10px;
+}
+
+element {
+  children: [element-icon, element-text];
+  spacing: 10px;
+  border-radius: @br;          /* reverted to variable */
+  background-color: transparent;
+  padding: 2px;
+}
+
+element-icon {
+  vertical-align: 0.5;
+  margin: 10px;
+  background-color: transparent;
+}
+
+element-text {
+  vertical-align: 0.5;
+  text-transform: bold;
+  border-radius: @br;          /* reverted to variable */
+  color: @fg;
+  highlight: @fg-accent;
+  padding: 5px;
+  margin: 10px;
+  background-color: transparent;
+}
+
+/* Normal/unselected items */
+element normal.normal,
+element alternate.normal {
+  background-color: transparent;
+  border: 0;
+}
+
+/* Selected item */
+element selected.normal {
+  border: 2px;
+  border-color: @border-selected;
+}
+
+element-text selected {
+  color: @fg-selected;
+  text-transform: bold;
+}
+
+/* Active/hover fallback */
+element selected.active {
+  background-color: @bg-selected;
+  border: 2px;
+  border-color: @border-selected;
+}
+
+/* Urgent state */
+element urgent.normal {
+  background-color: @accent-weak;
+  border: 2px;
+  border-color: @accent-weak;
+}
+
+element-text urgent {
+  color: @fg;
+}

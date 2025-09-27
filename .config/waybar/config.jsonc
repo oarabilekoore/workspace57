@@ -1,0 +1,182 @@
+
+{
+  "reload_style_on_change": true,
+  "position": "right",
+  "spacing": 2,
+  "width": 20,
+
+  "modules-left": [
+    "clock",
+    "hyprland/workspaces",
+  ],
+
+
+  "modules-center": [
+    "custom/spotify",
+    "custom/chrome",
+    "custom/firefox",
+    "custom/zed"
+  ],
+
+  "modules-right": [
+    "group/tray-expander",
+    "network",
+    "battery"
+  ],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻"
+    },
+    "persistent-workspaces": {
+      "1": [], "2": [], "3": [], "4": [], "5": []
+    }
+  },
+
+  "mpris": {
+    "format": "{player_icon}",        // only icon in bar
+    "format-paused": "",
+    "format-stopped": "",
+    "player-icons": {
+      "default": "",
+      "mpv": "",
+      "spotify": "",
+      "firefox": ""
+    },
+    "max-length": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "interval": 3,
+    "tooltip-format": "{title}\n{artist}"
+  },
+
+  "clock": {
+    "format": "{:%H\n%M}",
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",           
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 4,
+    "nospacing": 1,
+    "on-click": "kitty -e nmtui"
+  },
+
+  "battery": {
+  "bat": "BAT0",
+  "adapter": "ADP0",
+  "interval": 15,
+  "format": "{icon}",
+  "format-discharging": "{icon}",
+  "format-charging": "{icon}",
+  "format-plugged": "",
+  "format-full": "󰂅",
+  "format-icons": {
+    "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+    "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
+  },
+  "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+  "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+  "states": {
+    "good": 100,
+    "warning": 30,
+    "critical": 10
+  },
+    "on-click": "kitty -e btop",
+  "on-update": "bash -c '[[ $(cat /sys/class/power_supply/BAT0/capacity) -lt 30 ]] && powerprofilesctl set power-saver || true'"
+},
+
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "kitty -e bluetui",
+    "interval": 10
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",        
+    "on-click": "alacritty --class=Wiremix -e wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "󰝟",
+    "format-icons": { "default": ["","",""] },
+    "interval": 2
+  },
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item",
+      "spacing": 8
+    },
+    "modules": [
+      "custom/expand-icon",
+      "tray",
+      "bluetooth",
+      "custom/brightness",
+    ]
+  },
+
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 6
+  },
+
+  "custom/brightness": {
+    "format": "󰃠", 
+    "exec": "bash -c 'echo $(( $(brightnessctl g) * 100 / $(brightnessctl m) ))'",
+    "interval": 1,
+    "on-scroll-up": "brightnessctl s +5%",
+    "on-scroll-down": "brightnessctl s 5%-",
+    "on-click-right": "brightnessctl s 100%"
+  },
+  "custom/spotify": {
+  "format": "", 
+  "tooltip": false,
+  "on-click": "flatpak run com.spotify.Client"
+},
+"custom/chrome": {
+  "format": "", 
+  "tooltip": false,
+  "on-click": "chromium"
+},
+"custom/firefox": {
+  "format": "", 
+    "tooltip": false,
+    "on-click": "firefox"
+},
+"custom/zed": {
+  "format": "󰨞",
+  "tooltip": false,
+  "on-click": "zed"
+}
+}

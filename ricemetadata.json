@@ -1,0 +1,45 @@
+{
+  "distro": "endeavouros",
+  "shell": "/bin/bash",
+  "de": "Hyprland",
+  "packages": [
+    {
+      "name": "rofi",
+      "version": "1.7.9.1-1"
+    },
+    {
+      "name": "kitty",
+      "version": "0.42.2-1"
+    },
+    {
+      "name": "neovim",
+      "version": "0.11.3-1"
+    },
+    {
+      "name": "waybar",
+      "version": "0.14.0-1"
+    },
+    {
+      "name": "hyprlock",
+      "version": "0.9.1-1"
+    },
+    {
+      "name": "hypridle",
+      "version": "0.1.6-6"
+    },
+    {
+      "name": "hyprpaper",
+      "version": "0.7.5-3"
+    }
+  ],
+  "configs": [
+    "kitty",
+    "hypr",
+    "rofi",
+    "waybar",
+    "swaync",
+    "neovim",
+    "Pictures/Wallpapers",
+    "Templates/ThemeM0d"
+  ]
+}

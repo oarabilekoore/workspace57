@@ -1,0 +1,23 @@
+/* Firefox Chrome Theme */
+:root {
+  --toolbar-bgcolor: #000000 !important;
+  --toolbar-color: #e2e2e2 !important;
+  --tab-selected-bgcolor: #c6c6c6 !important;
+  --tab-selected-color: #303030 !important;
+  --urlbar-background-color: #464646 !important;
+  --urlbar-color: #e2e2e2 !important;
+}
+
+#navigator-toolbox {
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background-color: var(--tab-selected-bgcolor) !important;
+  color: var(--tab-selected-color) !important;
+}
+
+#urlbar {
+  background-color: var(--urlbar-background-color) !important;
+  color: var(--urlbar-color) !important;
+}

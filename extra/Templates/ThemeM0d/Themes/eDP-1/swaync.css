@@ -1,0 +1,386 @@
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #464646;
+  --bg-button: #767676;
+  --bg-button-hover: #909090;
+  --text-primary: #e2e2e2;
+  --text-disabled: #c6c6c6;
+  --border-color: #5e5e5e;
+  --priority-low: #e2e2e2;
+  --priority-normal: #c6c6c6;
+  --priority-critical: #c6c6c6;
+  --transition-standard: 0s ease-in-out;  /* disable transitions */
+}
+
+/* Base reset */
+* {
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Scrollbar */
+scrollbar,
+scrollbar slider {
+  opacity: 0;
+  min-width: 0px;
+  min-height: 0px;
+  background: transparent;
+}
+
+/* Common button styles */
+.close-button,
+.widget-title>button,
+.widget-dnd switch,
+.widget-menubar>.menu-button-bar>.widget-menubar-container button,
+.widget-menubar>revealer button,
+.widget-inhibitors>button {
+  border-radius: 2px;
+  border: none;
+  box-shadow: none;
+  transition: background var(--transition-standard);
+}
+
+/* Close button */
+.close-button {
+  background: var(--bg-button);
+  color: var(--text-primary);
+  text-shadow: none;
+  padding: 0;
+  border-radius: 50%;
+  margin-top: 4px;    /* reduce margin */
+  margin-right: 4px;  /* reduce margin */
+  min-width: 16px;    /* smaller */
+  min-height: 16px;
+}
+
+.close-button:hover {
+  background: var(--bg-button-hover);
+}
+
+/* Notification container sizing */
+.notification {
+  min-width: 80px;
+  max-width: 250px;
+  width: auto;
+  /* optional: allow shrink/grow, avoid fixed size */
+}
+
+/* Notification rows */
+.notification-row {
+  background: none;
+  margin-bottom: 2px;  /* reduce spacing between notifications */
+}
+
+.notification-row:focus,
+.notification-group:focus {
+  background: var(--bg-primary);
+}
+
+.notification-row .notification-background {
+  margin: 0px -4px 0px 0px;
+}
+
+/* Base notification appearance */
+.notification-row .notification-background .notification {
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+  transition: background var(--transition-standard), opacity 0s; /* disable fade-out transition */
+  background: var(--bg-primary);
+  padding: 2px 4px;  /* small padding */
+}
+
+/* Priority-based */
+.notification-row .notification-background .notification.low {
+  border-left: 3px solid var(--priority-low);
+}
+
+.notification-row .notification-background .notification.normal {
+  border-left: 3px solid var(--priority-normal);
+}
+
+.notification-row .notification-background .notification.critical {
+  border-left: 3px solid var(--priority-critical);
+}
+
+/* Default action button inside notifications */
+.notification-default-action {
+  padding: 2px;
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  transition: background var(--transition-standard);
+  border-radius: 2px;
+}
+
+.notification-default-action:hover {
+  background: var(--bg-primary);
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/* Notification content */
+.notification-content {
+  background: transparent;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.notification-content .image {
+  -gtk-icon-filter: none;
+  -gtk-icon-size: 20px;
+  border-radius: 50px;
+  margin: 0px 4px 0px 0px;
+}
+
+.notification-content .app-icon {
+  -gtk-icon-filter: none;
+  -gtk-icon-size: calc(20px / 3);
+  -gtk-icon-shadow: 0 1px 4px black;
+  margin: 4px;
+}
+
+.notification-content .text-box label {
+  filter: none;
+}
+
+/* Text elements */
+.notification-content .text-box .summary,
+.notification-content .text-box .time,
+.notification-content .text-box .body {
+  font-size: 9px;
+  background: transparent;
+  color: var(--text-primary);
+  text-shadow: none;
+}
+
+.notification-content .text-box .summary,
+.notification-content .text-box .time {
+  font-weight: bold;
+}
+
+.notification-content .text-box .time {
+  margin-right: 20px;  /* reduce gap */
+}
+
+.notification-content .text-box .body {
+  font-weight: normal;
+}
+
+/* Progress, images, inline reply */
+.notification-content progressbar {
+  margin-top: 2px;
+}
+
+.notification-content .body-image {
+  margin-top: 2px;
+  background-color: white;
+  -gtk-icon-filter: none;
+}
+
+.notification-content .inline-reply {
+  margin-top: 2px;
+}
+
+.notification-content .inline-reply .inline-reply-entry {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  caret-color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+}
+
+.notification-content .inline-reply .inline-reply-button {
+  margin-left: 2px;
+  background: #464646;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  color: var(--text-primary);
+}
+
+.notification-content .inline-reply .inline-reply-button:disabled {
+  background: initial;
+  color: rgba(198, 198, 198, 0.6);
+  border: 1px solid var(--border-color);
+  border-color: transparent;
+}
+
+.notification-content .inline-reply .inline-reply-button:hover {
+  background: var(--bg-primary);
+}
+
+/* Alternative actions */
+.notification-alt-actions {
+  background: none;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 2px;
+}
+
+.notification-action {
+  margin: 2px;
+  padding: 0;
+  font-size: 9px;
+}
+
+.notification-action>button {
+  border-radius: 2px;
+  font-size: 9px;
+  padding: 1px;
+}
+
+/* Notification groups */
+.notification-group {
+  transition: opacity 0s !important;  /* disable fade */
+  margin-bottom: 2px;
+}
+
+.notification-group .notification-group-close-button .close-button {
+  margin: 8px 12px;
+}
+
+.notification-group .notification-group-buttons,
+.notification-group .notification-group-headers {
+  margin: 0 8px;
+  color: var(--text-primary);
+}
+
+.notification-group .notification-group-headers {
+  font-size: 9px;
+  width: auto;
+  height: auto;
+}
+
+.notification-group .notification-group-headers .notification-group-icon {
+  color: var(--text-primary);
+  -gtk-icon-size: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 2px 2px 2px 0px;
+}
+
+.notification-group .notification-group-headers .notification-group-header {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.notification-group .notification-group-buttons {
+  margin: 2px;
+}
+
+/* Floating notifications */
+.blank-window,
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
+}
+
+.floating-notifications .notification-row {
+  margin-bottom: 2px;
+}
+
+.floating-notifications .notification-background {
+  padding: 2px 4px;
+  margin: 4px 8px;
+  background-color: var(--bg-primary);
+}
+
+/* Widgets inside control center */
+.control-center {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 2px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(27, 27, 27, 0.5);
+  padding: 2px;  /* reduce padding */
+}
+
+.control-center .control-center-list-placeholder {
+  opacity: 1.0;
+}
+
+.control-center .control-center-list {
+  background: transparent;
+}
+
+.control-center .control-center-list .notification .notification-default-action,
+.control-center .control-center-list .notification .notification-action {
+  transition: opacity 0s, background var(--transition-standard);
+}
+
+.control-center .control-center-list .notification .notification-default-action:hover,
+.control-center .control-center-list .notification .notification-action:hover {
+  background-color: var(--bg-primary);
+}
+
+/* Floating notifications in panel / outside center */
+.blank-window,
+.floating-notifications {
+  background: transparent;
+}
+
+/* Widgets (titles, etc.) */
+.widget-title>label {
+  margin: 4px;
+  font-weight: 700;
+  font-size: 9px;
+}
+
+.widget-title>button {
+  margin: 4px;
+  font-size: 9px;
+  background: var(--bg-primary);
+  border: 1px solid var(--text-disabled);
+  padding: 3px 6px;   /* reduced padding */
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* The rest of widgets: volume, backlight, etc., reduce margins/paddings similarly... */
+.widget-dnd,
+.widget-label,
+.widget-volume,
+.widget-slider,
+.widget-backlight {
+  margin: 4px;
+}
+
+.widget-dnd label,
+.widget-label>label {
+  color: var(--text-primary);
+  font-size: 9px;
+}
+
+.widget-dnd switch {
+  margin: 4px;
+}
+
+.widget-slider {
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.widget-volume row image {
+  -gtk-icon-size: 20px;
+}
+
+.per-app-volume {
+  background-color: var(--bg-secondary);
+  padding: 4px 6px 6px 6px;
+  margin: 0px 4px 4px 4px;
+  border-radius: 2px;
+}
+
+/* Summary: make everything tighter—less padding, less margin, smaller font sizes, minimized fixed sizes. */

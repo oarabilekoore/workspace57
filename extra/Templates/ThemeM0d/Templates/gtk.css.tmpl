@@ -1,0 +1,30 @@
+/* GTK3 Theme */
+@define-color bg_color {{ .Theme.Surface | toHex }};
+@define-color fg_color {{ .Theme.OnSurface | toHex }};
+@define-color base_color {{ .Theme.SurfaceVariant | toHex }};
+@define-color text_color {{ .Theme.OnSurfaceVariant | toHex }};
+@define-color selected_bg_color {{ (tone .Theme.Primary 80) | toHex }};
+@define-color selected_fg_color {{ (tone .Theme.Primary 20) | toHex }};
+@define-color tooltip_bg_color {{ (tone .Theme.Neutral 20) | toHex }};
+@define-color tooltip_fg_color {{ (tone .Theme.Neutral 90) | toHex }};
+
+window {
+  background-color: @bg_color;
+  color: @fg_color;
+}
+
+button {
+  background-color: @base_color;
+  color: @text_color;
+  border: 1px solid {{ (tone .Theme.Neutral 40) | toHex }};
+}
+
+button:hover {
+  background-color: {{ (tone .Theme.Primary 90) | toHex }};
+}
+
+entry {
+  background-color: @base_color;
+  color: @text_color;
+  border: 1px solid {{ (tone .Theme.Neutral 40) | toHex }};
+}

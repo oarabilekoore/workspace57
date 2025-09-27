@@ -13,6 +13,16 @@ A modern, minimalist Hyprland rice for EndeavourOS featuring custom Bash functio
 ### Development Environment
 <img src="./screenshots/3.png" alt="Workflow" width="600">
 
+## Video Demo
+
+<div align="center">
+  <a href="https://youtu.be/VamD6YGK_m0">
+    <img src="https://img.youtube.com/vi/VamD6YGK_m0/maxresdefault.jpg" alt="Workspace Demo" width="600">
+    <br>
+    <em>🎬 Click to watch the full setup demonstration</em>
+  </a>
+</div>
+
 ## 🖥️ System Info
 
 - **Distro**: EndeavourOS (Arch-based)

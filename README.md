@@ -199,7 +199,7 @@ This workspace is built using and integrates with:
 ### riceThing
 A powerful Linux rice packaging and sharing tool that makes desktop configuration portable and shareable.
 
-- **Repository**: [riceThing](https://github.com/yourusername/riceThing)
+- **Repository**: [riceThing](https://github.com/oarabilekoore/riceThing)
 - **Purpose**: Package and install Linux desktop configurations
 - **Features**:
   - Automatic package management
@@ -210,7 +210,7 @@ A powerful Linux rice packaging and sharing tool that makes desktop configuratio
 ### archThemeM0d
 An intelligent theming system that generates Material 3-compliant color schemes from wallpapers.
 
-- **Repository**: [archThemeM0d](https://github.com/yourusername/archThemeM0d)
+- **Repository**: [archThemeM0d](https://github.com/oarabilekoore/archThemeM0d)
 - **Purpose**: Dynamic theme generation and management
 - **Features**:
   - Wallpaper-based color extraction

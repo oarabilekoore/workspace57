@@ -30,6 +30,22 @@
     {
       "name": "hyprpaper",
       "version": "0.7.5-3"
+    },
+    {
+      "name": "ungoogled-chromium-bin",
+      "version": "140.0.7339.80-1"
+    },
+    {
+      "name": "nemo",
+      "version": "6.4.5-1"
+    },
+    {
+      "name": "bluetui",
+      "version": "0.6-1"
+    },
+    {
+      "name": "nmtui",
+      "version": "unknown"
     }
   ],
   "configs": [
@@ -38,7 +54,7 @@
     "rofi",
     "waybar",
     "swaync",
-    "neovim",
+    "nvim",
     "Pictures/Wallpapers",
     "Templates/ThemeM0d"
   ]

@@ -3,33 +3,7 @@
 
 export MONITOR_NAME=$(hyprctl monitors -j | jq -r '.[0].name')
 
-# Open my development directory
-
 dev() {
-  local base_dir="$HOME/Development"
-  local target="$base_dir/$1"
-
-  if [ -z "$1" ]; then
-    echo "Usage: dev <projectName>"
-    return 1
-  fi
-
-  if [ -d "$target" ]; then
-    # Open kitty in the target directory (independent process)
-    kitty --working-directory="$target" &
-    disown
-
-    # Open nvim in the same directory (foreground process)
-    cd "$target" || return
-    nvim
-  else
-    echo "Project '$1' not found in $base_dir"
-    return 1
-  fi
-}
-
-# dev command but with zed not nvim
-zedv() {
   local base_dir="$HOME/Development"
   local target="$base_dir/$1"
 
@@ -75,9 +49,6 @@ mkcd() {
   mkdir -p "$1" && cd "$1" || return
 }
 
-# naughty ass aliases hehe
-alias caffeine='~/.config/hypr/scripts/caffeine.sh'
-alias prgnotifier='~/.config/dunst/notifier.sh'
 alias sleep='sudo systemctl suspend'
 alias die='shutdown'
 alias update='sudo pacman -Syu'

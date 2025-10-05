@@ -8,17 +8,13 @@ enable_caffeine() {
   echo "Caffeine enabled: preventing idle + lock"
   notify-send "Caffeine Enabled; Preventing Idle & Lock"
   touch "$STATE_FILE"
-  # Kill hypridle (the idle manager) if running
-  pkill -STOP hypridle 2>/dev/null
+  pkill hypridle &
 }
 
 disable_caffeine() {
   echo "Caffeine disabled: restoring idle + lock"
   notify-send "Caffeine Disabled"
   rm -f "$STATE_FILE"
-  # Resume hypridle
-  pkill -CONT hypridle 2>/dev/null
-  # Reset idle timers so lock happens properly
   hypridle &
 }
 

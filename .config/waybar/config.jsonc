@@ -14,7 +14,6 @@
   "modules-center": [
     "custom/spotify",
     "custom/chrome",
-    "custom/firefox",
     "custom/zed"
   ],
 
@@ -53,7 +52,6 @@
       "default": "",
       "mpv": "",
       "spotify": "",
-      "firefox": ""
     },
     "max-length": 1,
     "on-click": "playerctl play-pause",
@@ -168,11 +166,6 @@
   "format": "", 
   "tooltip": false,
   "on-click": "chromium"
-},
-"custom/firefox": {
-  "format": "", 
-    "tooltip": false,
-    "on-click": "firefox"
 },
 "custom/zed": {
   "format": "󰨞",

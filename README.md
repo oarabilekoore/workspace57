@@ -14,7 +14,7 @@ A modern, minimalist Hyprland rice for EndeavourOS featuring custom Bash functio
 <img src="./screenshots/3.png" alt="Workflow" width="600">
 
 ### Desktop 
-<img src="./screenshots/4.png" alt="Workflow" width="600">
+<img src="./screenshots/4.jpeg" alt="Workflow" width="600">
 
 
 ## Video Demo

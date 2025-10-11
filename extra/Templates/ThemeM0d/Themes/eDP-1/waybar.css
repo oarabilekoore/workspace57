@@ -36,17 +36,17 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: rgba(255, 148, 95, 0.3);
+    background: rgba(198, 198, 199, 0.3);
 }
 
 #workspaces button.focused {
-    background-color: #ff945f;
-    box-shadow: inset 0 -3px #b81e00;
-    color: #6f0000;
+    background-color: #c6c6c7;
+    box-shadow: inset 0 -3px #5e5e5f;
+    color: #303030;
 }
 
 #workspaces button.active {
-    color: #6f0000;
+    color: #303030;
 }
 
 #workspaces button.empty {

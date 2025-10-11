@@ -23,7 +23,7 @@
     text_icon_padding = 0
     frame_width = 3
     # Default frame color uses the main Primary accent
-    frame_color = "#ff945f"
+    frame_color = "#c6c6c7"
 
     # Separators
     separator_color = frame
@@ -89,7 +89,7 @@
     background = "#464646"
     foreground = "#e2e2e2"
     # Use the main Primary accent for the frame
-    frame_color = "#ff945f"
+    frame_color = "#c6c6c7"
     timeout = 10
 
 [urgency_critical]
@@ -120,8 +120,8 @@
     appname = "Brightness"
     urgency = low
     # Use the Secondary accent for variety
-    background = "#ffa880"
-    foreground = "#370e00"
-    frame_color = "#ffcba9"
+    background = "#c5c6c7"
+    foreground = "#1b1b1b"
+    frame_color = "#e1e2e3"
     format = "<b>💡 %s</b>\n%b"
     timeout = 3

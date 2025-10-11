@@ -11,11 +11,11 @@ configuration {
   foreground: #e2e2e2;
   foreground-alt: #c6c6c6;
 
-  accent: #ff945f;
-  accent-weak: #f95c2d;
+  accent: #c6c6c7;
+  accent-weak: #909091;
 
-  selected-bg: #9f4020;
-  selected-fg: #ffe2cc;
+  selected-bg: #5d5e5f;
+  selected-fg: #f0f0f1;
 
   border-color-main: #5e5e5e;
 

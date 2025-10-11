@@ -3,12 +3,12 @@
 
 export MONITOR_NAME=$(hyprctl monitors -j | jq -r '.[0].name')
 
-dev() {
+opendev() {
   local base_dir="$HOME/Development"
   local target="$base_dir/$1"
 
   if [ -z "$1" ]; then
-    echo "Usage: zedv <projectName>"
+    echo "Usage: opendev <projectName>"
     return 1
   fi
 
@@ -19,7 +19,7 @@ dev() {
 
     # Open nvim in the same directory (foreground process)
     cd "$target" || return
-    zed .
+    nvim .
   else
     echo "Project '$1' not found in $base_dir"
     return 1

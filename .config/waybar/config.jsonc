@@ -14,12 +14,11 @@
   "modules-center": [
     "custom/spotify",
     "custom/chrome",
-    "custom/zed"
   ],
 
   "modules-right": [
     "group/tray-expander",
-    "network",
+    "tray",
     "battery"
   ],
 
@@ -63,6 +62,8 @@
 
   "clock": {
     "format": "{:%H\n%M}",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/shellmod.sh"
   },
 
   "network": {
@@ -133,9 +134,6 @@
     },
     "modules": [
       "custom/expand-icon",
-      "tray",
-      "bluetooth",
-      "custom/brightness",
     ]
   },
 

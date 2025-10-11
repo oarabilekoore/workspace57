@@ -7,8 +7,8 @@
   --text-disabled: #c6c6c6;
   --border-color: #5e5e5e;
   --priority-low: #e2e2e2;
-  --priority-normal: #ff945f;
-  --priority-critical: #ffa880;
+  --priority-normal: #c6c6c7;
+  --priority-critical: #c5c6c7;
   --transition-standard: 0s ease-in-out;  /* disable transitions */
 }
 

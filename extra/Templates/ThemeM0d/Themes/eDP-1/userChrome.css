@@ -2,8 +2,8 @@
 :root {
   --toolbar-bgcolor: #000000 !important;
   --toolbar-color: #e2e2e2 !important;
-  --tab-selected-bgcolor: #ff945f !important;
-  --tab-selected-color: #6f0000 !important;
+  --tab-selected-bgcolor: #c6c6c7 !important;
+  --tab-selected-color: #303030 !important;
   --urlbar-background-color: #464646 !important;
   --urlbar-color: #e2e2e2 !important;
 }

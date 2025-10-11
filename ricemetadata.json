@@ -40,6 +40,10 @@
       "version": "6.4.5-1"
     },
     {
+      "name": "quickshell",
+      "version": "0.2.0-1"
+    },
+    {
       "name": "bluetui",
       "version": "0.6-1"
     },
@@ -55,6 +59,7 @@
     "waybar",
     "swaync",
     "nvim",
+    "quickshell",
     "Pictures/Wallpapers",
     "Templates/ThemeM0d"
   ]
